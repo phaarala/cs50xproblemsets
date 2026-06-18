@@ -14,11 +14,24 @@
 int main(void)
 {
     // Prompt the user for some reading text
-    string text = get_string("Please provide some text, and the program will provide an approximate reading level based on the Coleman-Liau index.")
+    string text = get_string("Please provide some text: ");
 
-    // Count the number of letters, words, and sentences in the text
+    // Count the number of letters
+    int text_length = strlen(text);
+    int letters = 0;
 
-    // Compute the Coleman-Liau index based on the variables above
+    for (int i = 0; i < text_length; i++)
+    {
+        if (isalpha(text[i]))
+            {
+                letters ++;
+            }
+    }
+    // Count the number of words
+    
+    // Count the number of sentences
+
+    // Compute the Coleman-Liau index based on the variables above 
 
     // Print the grade level to the user
 }
