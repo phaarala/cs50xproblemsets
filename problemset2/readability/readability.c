@@ -9,8 +9,16 @@
 #include <string.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <math.h>
 
 int main(void)
 {
-    
+    // Prompt the user for some reading text
+    string text = get_string("Please provide some text, and the program will provide an approximate reading level based on the Coleman-Liau index.")
+
+    // Count the number of letters, words, and sentences in the text
+
+    // Compute the Coleman-Liau index based on the variables above
+
+    // Print the grade level to the user
 }
