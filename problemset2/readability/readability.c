@@ -16,22 +16,32 @@ int main(void)
     // Prompt the user for some reading text
     string text = get_string("Please provide some text: ");
 
-    // Count the number of letters
+    // Initialize letter, word, and sentence variables
     int text_length = strlen(text);
     int letters = 0;
+    int words = 0;
+    int sentences = 0;
 
     for (int i = 0; i < text_length; i++)
     {
+        // Count the number of letters
         if (isalpha(text[i]))
-            {
-                letters ++;
-            }
+        {
+            letters ++;
+        }
+         // Count the number of words
+        if (isblank(text[i]))
+        {
+            words++;
+        }
+        // Count the number of sentences
+        if (ispunct(i))
+        {
+            sentences ++;
+        }
     }
-    // Count the number of words
-    
-    // Count the number of sentences
-
-    // Compute the Coleman-Liau index based on the variables above 
+    // Compute the Coleman-Liau Index (0.0588 * L - 0.296 * S - 15.8) 
+    long cl_index = 0.0588 * letters - 0.296 * sentences - 15.8
 
     // Print the grade level to the user
 }
