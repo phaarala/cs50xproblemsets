@@ -1,11 +1,11 @@
-sort1 uses: TODO
+sort1 uses: Bubble Sort
 
-How do you know?: TODO
+How do you know?: sort1's runtime depends heavily on how ordered the input already is. On sorted50000.txt it finished almost instantly (~0.008s), but on random50000.txt it took ~6.5s — the same number of elements, roughly 800× slower. That sensitivity to input order means the algorithm has a distinct best case: an optimized bubble sort makes a single pass over already-sorted data, detects that no swaps occurred, and terminates early, giving Ω(n). On random or reversed data it can't exit early and falls back to Θ(n²), which is exactly the steep slowdown I measured. Order-dependent performance with a fast path on sorted input is the signature of bubble sort.
 
-sort2 uses: TODO
+sort2 uses: Merge Sort
 
-How do you know?: TODO
+How do you know?: sort2 was the fastest program across every input, and crucially its runtime barely changed with input order — sorted, random, and reversed files of the same size all finished in nearly the same (very small) time. That order-independence combined with excellent scaling is the hallmark of merge sort, which runs in Θ(n log n) in the best, average, and worst case. It doesn't get a special speed-up on already-sorted data the way bubble sort does, but its n log n scaling makes it dramatically faster than the two Θ(n²) algorithms as n grows.
 
-sort3 uses: TODO
+sort3 uses: Selection Sort
 
-How do you know?: TODO
+How do you know?: sort3 was slow, and its runtime was essentially the same regardless of whether the input was sorted, random, or reversed (all roughly 2.4–2.7s at 50000 elements). This constant behavior across input orderings means it has no best case — it always does the same amount of work. That matches selection sort, which scans the entire unsorted portion of the list on every pass to find the minimum, giving Θ(n²) in all cases. 
